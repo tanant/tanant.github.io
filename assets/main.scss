@@ -1,0 +1,29 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@import "minima";
+
+.img-left {
+    float: left;
+  }
+  
+  .img-right {
+    float: right;
+  }
+  
+  .margin-right {
+    margin-right: 20px;
+  }
+  
+  .margin-left {
+    margin-left: 20px;
+  }
+  
+  .avatar {
+    display: inline-block;
+    overflow: hidden;
+    line-height: 1;
+    vertical-align: middle;
+    border-radius: 20px;
+  }
