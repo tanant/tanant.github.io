@@ -41,7 +41,8 @@ linkedin_username: tanant  # the annoying linked thing as well
 theme: minima
 plugins:
   - jekyll-feed
-
+  - jekyll-redirect-from
+  
 header_pages:
  - pages/about.markdown
  - pages/diagnostics.markdown
