@@ -4,6 +4,29 @@
 
 @import "minima";
 
+
+div.footnotes{
+  font-size:80%;
+  }
+
+.page-content dt {font-weight:bold;float:left}
+.page-content dd {margin-bottom:0.5em;}
+.page-content dt {padding-right:0.5em;}
+ 
+.post-content dt {font-weight:bold;float:left}
+.post-content dd {margin-bottom:0.5em;}
+.post-content dt {padding-right:0.5em;}
+
+div.footnotes {
+  font-size: 80%;
+  margin-top: 3em;
+  border-top: 1px;
+  padding-top: 1em;
+  border-top-color: #C0C0C0;
+  border-top-style: solid;
+}
+
+
 .img-left {
     float: left;
   }
