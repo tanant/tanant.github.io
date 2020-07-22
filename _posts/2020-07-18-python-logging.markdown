@@ -2,6 +2,7 @@
 layout: post
 title:  "Python logging levels (for you VFX/FEAT people out there)"
 ---
+there ended up being three parts: [logging levels][pt1], [filters+handlers][pt2], and [dcc defaults][pt3])|
 
 So one of those topics that's been done to death a little but sems to cause some confusion is around logging in python. While it's a smidge confusing in the way the docs are written, it's quite a robust, well-featured system that should largely cover anything you need. There may be some situations where it doesn't - but that's rarer than you'd think and there's very few reasons for rolling your own. Honestly.
 
@@ -90,3 +91,6 @@ Yes. You *can* set `disabled` on a logger, but it's not really part of the publi
 
 [python-advanced-logging]: https://docs.python.org/3/howto/logging.html#logging-advanced-tutorial 
 [disable-not-public]: https://bugs.python.org/issue36318
+[pt1]: /2020/07/18/python-logging.html
+[pt2]: /2020/07/19/python-logging-filterhandler.html
+[pt3]: /2020/07/21/dcc-defaults.html

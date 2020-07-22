@@ -2,8 +2,9 @@
 layout: post
 title:  "Logging Handlers and Filters (for you VFX/FEAT people out there)"
 ---
+there ended up being three parts: [logging levels][pt1], [filters+handlers][pt2], and [dcc defaults + presentation][pt3])|
 
-Righto. So assuming you got the [basic logging][pt1] this is where I start getting into filters/handlers. I'm taking Maya as my baseline, just because I have it open and it's more likely you're used to Maya than say, Nuke. The same principles apply.
+Righto. So assuming you got the idea back in the first bit this is where I start getting into filters/handlers. I'm taking Maya as my baseline, just because I have it open and it's more likely you're used to Maya than say, Nuke. The same principles apply.
 
 (Really, this could be just in the other piece, but there's often too much text in one go, so you know, easier to read this way)
 
@@ -95,3 +96,5 @@ logging.getLogger("foo.magic.chickens").addFilter(cef)
 Note the minor gotcha here - you need to apply the filter at the logger level where the message was generated. If you were to apply the filter at `foo` or `foo.magic` you would see no impact.
 
 [pt1]: /2020/07/18/python-logging.html
+[pt2]: /2020/07/19/python-logging-filterhandler.html
+[pt3]: /2020/07/21/dcc-defaults.html
