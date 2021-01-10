@@ -35,22 +35,48 @@ Don't forget as well to set up metadata in your `/etc/wsl.conf` [^metadata]
 
 When first installed, the unix username you provide will be added to the sudoers list.
 
-
 ### Software
-
-- aptitude 
-- screen
+- aptitude
+- screen (you will probably need to finangle)
 - python3
-- build-essential
-- git
-- ack
-- tig
-- wget
-- curl
+- build-essential,  strace
+- git, ack, tig
+- wget, curl
+- man
 
 This is kinda sorted as my standard 'here's a box, go nuts' level. I have a snapshot of this which i can just upgrade periodically or reset to if i care enough about it. I will always just add to this as i go, but this is enough for me to start off with 
 
-#### X11 
+### Misc QoL stuff
+append this to `.bashrc`
+{% highlight shell %}
+# because i run multiple differing instances, this should stop me from 
+# accidentally working in one window where i didn't expect. Hopefully
+DISTRONAME=baseline
+PS1="[$DISTRONAME]:$PS1"
+{% endhighlight %}
+
+append this to `.bash_aliases`
+{% highlight shell %}
+alias ll="ls -la" 
+{% endhighlight %}
+
+and do this to `.inputrc`
+{% highlight shell %}
+# include the system root inputrc as a baseline
+$include /etc/inputrc
+
+# mappings for "page up" and "page down" to step to the beginning/end
+# of the history
+"\e[5~": beginning-of-history
+"\e[6~": end-of-history
+
+# use up and down for history search instead of simple search
+# (because you can achieve that with a blank line)
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+{% endhighlight %}
+
+### X11 
 For X, i use [VcXsrv](https://sourceforge.net/projects/vcxsrv/) - on the windows host side, which requires a little bit of mucking around with windows firewall.
 
 The short story is that you want to check the advanced settings for your firewall, and set it so you allow traffic through.
@@ -61,6 +87,6 @@ then for WSL2, you need to export the correct DISPLAY host, and do something lik
 
 `export DISPLAY=$(grep -m 1 nameserver /etc/resolv.conf | awk '{print $2}'):0.0`
 
-The 0.0 will be dependent on how you've rigged your X11 server of course, but there's a decent write up here: https://github.com/cascadium/wsl-windows-toolbar-launcher#firewall-rules
+The 0.0 will be dependent on how you've rigged your X11 server of course, but there's a decent write up here [https://github.com/cascadium/wsl-windows-toolbar-launcher#firewall-rules](https://github.com/cascadium/wsl-windows-toolbar-launcher#firewall-rules)
 
 [^metadata]: [my earlier notes](http://www.greenworm.net/stuff/st/2020/02/29/wsl-and-virtualenvs.html)
