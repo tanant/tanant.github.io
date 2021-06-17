@@ -1,0 +1,215 @@
+#! C:/Program Files/Nuke13.0v2/nuke-13.0.2.dll -nx
+version 13.0 v2
+define_window_layout_xml {<?xml version="1.0" encoding="UTF-8"?>
+<layout version="1.0">
+    <window x="817" y="90" w="1323" h="744" screen="0">
+        <splitter orientation="1">
+            <split size="40"/>
+            <dock id="" hideTitles="1" activePageId="Toolbar.1">
+                <page id="Toolbar.1"/>
+            </dock>
+            <split size="545" stretch="1"/>
+            <splitter orientation="2">
+                <split size="706"/>
+                <dock id="" activePageId="DAG.1" focus="true">
+                    <page id="DAG.1"/>
+                    <page id="Viewer.1"/>
+                </dock>
+            </splitter>
+            <split size="730"/>
+            <dock id="" activePageId="uk.co.thefoundry.scripteditor.1">
+                <page id="uk.co.thefoundry.scripteditor.1"/>
+            </dock>
+        </splitter>
+    </window>
+</layout>
+}
+Root {
+ inputs 0
+ name C:/Users/tanant/Desktop/regexes.nk
+ format "2048 1556 0 0 2048 1556 1 2K_Super_35(full-ap)"
+ proxy_type scale
+ proxy_format "1024 778 0 0 1024 778 1 1K_Super_35(full-ap)"
+ colorManagement Nuke
+ workingSpaceLUT linear
+ monitorLut sRGB
+ monitorOutLUT rec709
+ int8Lut sRGB
+ int16Lut sRGB
+ logLut Cineon
+ floatLut linear
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode1
+ tile_color 0x8e388e00
+ label "Here's a mess i made earlier"
+ note_font_size 42
+ selected true
+ xpos -295
+ ypos -1420
+ bdwidth 696
+ bdheight 305
+}
+StickyNote {
+ inputs 0
+ name StickyNote1
+ xpos 1796
+ ypos 1589
+}
+add_layer {color_bleed color_bleed.red color_bleed.green color_bleed.blue color_bleed.alpha}
+add_layer {colour_bleed colour_bleed.red colour_bleed.green colour_bleed.blue colour_bleed.alpha}
+Shuffle {
+ inputs 0
+ in2 rgba
+ out color_bleed
+ out2 colour_bleed
+ name Shuffle11
+ selected true
+ xpos -248
+ ypos -1148
+}
+add_layer {qt_mat qt_mat.red qt_mat.green qt_mat.blue qt_mat.alpha}
+add_layer {bw_matte bw_matte.red bw_matte.green bw_matte.blue bw_matte.alpha}
+Shuffle {
+ inputs 0
+ in2 rgba
+ out qt_mat
+ out2 bw_matte
+ name Shuffle10
+ selected true
+ xpos -285
+ ypos -1186
+}
+add_layer {position position.red position.green position.blue position.alpha}
+Shuffle {
+ inputs 0
+ in2 rgba
+ out position
+ name Shuffle1
+ selected true
+ xpos 294
+ ypos -1172
+}
+add_layer {nCam nCam.red nCam.green nCam.blue nCam.alpha}
+add_layer {nWorld nWorld.red nWorld.green nWorld.blue nWorld.alpha}
+Shuffle {
+ inputs 0
+ in2 rgba
+ out nCam
+ out2 nWorld
+ name Shuffle9
+ selected true
+ xpos 217
+ ypos -1223
+}
+add_layer {pCam pCam.red pCam.green pCam.blue pCam.alpha}
+Shuffle {
+ inputs 0
+ in2 rgba
+ out pCam
+ name Shuffle8
+ selected true
+ xpos 179
+ ypos -1271
+}
+add_layer {pWorld pWorld.red pWorld.green pWorld.blue pWorld.alpha}
+add_layer {pRef pRef.red pRef.green pRef.blue pRef.alpha}
+Shuffle {
+ inputs 0
+ in2 rgba
+ out pWorld
+ out2 pRef
+ name Shuffle7
+ selected true
+ xpos 165
+ ypos -1309
+}
+add_layer {light_02 light_02.red light_02.green light_02.blue}
+add_layer {light_03 light_03.red light_03.green light_03.blue}
+Shuffle {
+ inputs 0
+ in2 rgba
+ out light_02
+ out2 light_03
+ name Shuffle6
+ selected true
+ xpos 76
+ ypos -1299
+}
+add_layer {light_00 light_00.red light_00.green light_00.blue light_00.alpha}
+add_layer {light_01 light_01.red light_01.green light_01.blue}
+Shuffle {
+ inputs 0
+ in2 rgba
+ out light_00
+ out2 light_01
+ name Shuffle5
+ selected true
+ xpos -29
+ ypos -1302
+}
+add_layer {diffuse diffuse.red diffuse.green diffuse.blue}
+add_layer {specular specular.red specular.green specular.blue}
+Shuffle {
+ inputs 0
+ in2 rgba
+ out diffuse
+ out2 specular
+ name Shuffle4
+ selected true
+ xpos -136
+ ypos -1303
+}
+push 0
+add_layer {di_matte di_matte.red di_matte.green di_matte.blue di_matte.alpha}
+add_layer {id_matte id_matte.red id_matte.green id_matte.blue id_matte.alpha}
+Shuffle {
+ inputs 0
+ in2 rgba
+ out di_matte
+ out2 id_matte
+ name Shuffle2
+ selected true
+ xpos -281
+ ypos -1252
+}
+Shuffle {
+ inputs 0
+ in2 rgba
+ name Shuffle3
+ selected true
+ xpos -241
+ ypos -1299
+}
+Merge2 {
+ inputs 11+1
+ also_merge all
+ name Merge1
+ selected true
+ xpos -29
+ ypos -1158
+}
+set Nc5e6a000 [stack 0]
+Viewer {
+ frame_range 1-100
+ name Viewer1
+ xpos 208
+ ypos -997
+}
+push $Nc5e6a000
+NoOp {
+ name NoOp1
+ selected true
+ xpos -29
+ ypos -1060
+ addUserKnob {20 User}
+ addUserKnob {26 header_incoming l "Incoming Channels" -STARTLINE}
+ addUserKnob {43 incoming_channels l "" +STARTLINE}
+ incoming_channels "bw_matte\ncolor_bleed\ncolour_bleed\ndi_matte\ndiffuse\nid_matte\nlight_00\nlight_01\nlight_02\nlight_03\nnCam\nnWorld\npCam\npRef\npWorld\nposition\nqt_mat\nrgba\nspecular"
+ addUserKnob {43 results l "" -STARTLINE}
+ addUserKnob {1 regex l regex:}
+ addUserKnob {22 calculate -STARTLINE T "\nimport re\n\n# I do this because it means i can jam away in the script editor\n# and tell the rest of my code the_node = nuke.selectedNode()\nthe_node = nuke.thisNode()\n\n# spaces *are* valid. But for this demonstration they're gonna create false\n# mismatches.. in this demo example we remove spaces for ease.\nraw_text = the_node.knob('regex').toScript()  # using toScript cause I don't want TCL evaluation\nclean_re = raw_text.strip()  # remove whitespace from front and back\nthe_node.knob('regex').setValue(clean_re)  # and push the change back \n\n\n\n# get the text from the incoming side\nincoming = the_node.knob('incoming_channels').value()\n# one thing per line, so let's make it a list again.\n# Yes. Could be one line. I know. I know.\nincoming = incoming.split('\\n')\n\n# for each row, try make a match and \n\nmatches = \[]\nfor row in incoming:\n    search_result = re.search(clean_re, row)\n    if not search_result:\n        matches.append(\"\")  # add in an empty value\n        continue  # continue with the loop. General note\n    \n    # now do the fancy string formatting thing\n\n    matches.append(\".\"*search_result.start()+row\[search_result.start():search_result.end()] + \"     (\{row\})\".format(row=row))\n\nthe_node\['results'].setValue(\"\\n\".join(matches))\n\n\n\n\n\n"}
+ addUserKnob {26 ""}
+ addUserKnob {22 refresh l "Refresh/Reset Channels" T "\n# I do this because it means i can jam away in the script editor\n# and tell the rest of my code the_node = nuke.selectedNode()\nthe_node = nuke.thisNode()\n\n# channels should be what this node has coming in.\n# if you have nothing, then fetch them from the nuke.root()\nchannels = the_node.channels()\nif not channels:\n    channels = nuke.root().channels()\n# you could write this in one line by the way:\n#     channels = the_node.channels or nuke.root().channels()\n\n# for this exercise, I just want the names without the .rgba, it's just easier\nchannels = list(set(\[x.split('.')\[0] for x in channels]))\n\n# now update the incoming_channels box. It's text, so we \n# write out one line per channel, sorted\nsorted_channels = sorted(channels)\nthe_node.knob('incoming_channels').setValue(\"\\n\".join(sorted_channels))\n\n# aaand reset the old results\nthe_node.knob('results').setValue(\"\")\n" +STARTLINE}
+}

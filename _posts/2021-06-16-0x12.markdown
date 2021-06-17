@@ -1,0 +1,48 @@
+---
+layout: post
+title:  "Python for (Nuke) Compers 0x12 - Regexes"
+---
+
+<iframe width="560" height="315" src="https://youtu.be/m9FXB5kQa2Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+# Other resources
+Regexes are pretty well known, if what i'm handwaving at is of interest, here's some other places to read:
+
+- [Wikipedia - https://en.wikipedia.org/wiki/Regular_expression](https://en.wikipedia.org/wiki/Regular_expression)
+- [Regex101 - super handy tester - https://regex101.com/](https://regex101.com/)
+- [Python 3's docs - https://docs.python.org/3/howto/regex.html](https://docs.python.org/3/howto/regex.htm)
+- [Zetcode! Zetcode's awesome - https://zetcode.com/python/regularexpressions/](https://zetcode.com/python/regularexpressions/)
+
+
+# My demo rig
+[here's the nukescript](/assets/resources/regexes.nk) (7kb)
+[![a screenshot of my regex rig](/assets/images/0x12-regexrig.png)](/assets/resources/regexes.nk)
+
+
+
+# that cheat sheet i was writing up
+```
+positional anchor
+   ^        start of text
+   $        end of text
+
+wildcard
+   .        literally whatever
+
+how many? (aka: quantifiers)
+   +        1 or more (of the thing before it)
+   *        0 or more (of the thing before it)
+   ?        0 or 1    (of the thing before it)
+
+groups
+  (aaa|bbb|ccc)   aaa OR bbb OR ccc
+
+classes
+  [abc]     anything in the class 'abc' (so basically, a or b or c)
+  [^abc]    anything OTHER than class 'abc' (so basically, a or b or c)
+
+shortcuts
+  [a-z]     all lowercase
+  [A-Z]     all uppercase
+  [0-9]     all numbers
+```
