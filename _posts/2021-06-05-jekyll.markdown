@@ -1,0 +1,32 @@
+---
+layout: post
+title:  "How I've got jekyll setup at home (and why)"
+---
+
+So for the longest time I was after something that I could easily maintain for page serving and reducing the friction between writing something, and getting up online. I tried running local copies of say, [Ghost](https://ghost.org/), kicked around with a local copy of [Wordpress](https://wordpress.com) and _considered_ [Drupal](https://drupal.org) locally. 
+
+But at the end of the day, I just wanted to write text, and worry about CMS and other considerations later (if at all) so those things died off, and honestly, they were too much maintenance - I know it didn't have to be like that but I'm not really enamoured with plugging into any particular ecosystem, and I didn't like the fact I had to have infrastructure around.
+
+So I ended up with [Jekyll](https://jekyllrb.com) and I'm *super* happy with how it turned out.
+
+# Benefits?
+There's still some work I'd like to do on themeing to make things pretty, and my knowledge of liquid and ruby is well.. primitive, but this scratches all the relevant itches. This fufills my desire of having a super lightweight document server with near-zero issues in syncing with an online repo.
+
+#### Markdown
+It's markdown. It'll do.
+
+I'm writing blocks of notes for myself, or text that someone might find useful if indexed - markdown has enough that I can get away with it and the time-to-page is approximately zero. I'm writing this live just as i'd write it for my own benefit. 
+
+#### Github Pages and git
+This is the secret sauce in a way - I can keep a clone of the repo, and just push changes as I write them, and let github do it's CI thing to regenerate the site.
+
+I'm used to working like this for code, so I'm more than happy to work like this for pages. It's one less thing to worry about
+
+#### WSL local hosting
+Locally I run a very barebones WSL instance for this purpose, the integration is pretty much all there - I access the directory with normal tools (gedit if i wanted, but VS code right now and Notepad++), type and then hit up localhost:4000 to preview.
+
+If I want files? I'm using a proper *nix filesystem and therefore don't have to think too much. If i'm offline, it's a static site server, so I can look at my own notes.
+
+(Search is less good here, but that's something I can always look at adding later)
+
+
