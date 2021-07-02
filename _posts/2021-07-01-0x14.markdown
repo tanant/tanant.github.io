@@ -1,0 +1,59 @@
+---
+layout: post
+title:  "Python for (Nuke) Compers 0x14 - remaking topnode and recursion"
+---
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FWFw1yyh9Oc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+# Code and the rig and other stuffs
+
+[![a screenshot of my regex rig](/assets/images/0x14-topnode.png)](/assets/resources/topnode.nk)
+
+[here's the nukescript](/assets/resources/topnode.nk) (7kb)
+
+I've just put the code on the stickynote as a horrible way to copy it around if you get the script, otherwise if you don't want to open up nuke:
+
+```
+the_node = nuke.toNode("Scene1")
+
+# manual process
+the_node.input(0).input(0).input(0).input(0).input(0).input(0)
+
+
+def topnode(the_node, max_depth=None):
+    """Return the topmost node on the B-stream (input 0)
+       go at MOST max_depth nodes (if none, go forever)
+       return that node that you found at this depth
+       NOTE: first node found is depth 0
+    """
+
+    current_node = the_node
+    depth = 0
+    while True:
+        if current_node.input(0) is None:
+            return current_node
+        else:
+            current_node = current_node.input(0)
+
+the_node = nuke.selectedNode()
+print (topnode(the_node, 3).name())
+
+the_node.input(0).input(0).input(0).input(0).input(0).input(0)
+
+def topnode_r(the_node):
+    """Return the topmost node on the B-stream (input 0)"""
+
+    current_node = the_node
+    if current_node.input(0) is None:
+        return current_node
+    return topnode_r(current_node.input(0))
+
+
+the_node = nuke.selectedNode()
+print(topnode_r(the_node).name())
+
+foo()
+
+def foo():
+    return foo()
+```

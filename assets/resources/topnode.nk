@@ -1,0 +1,223 @@
+#! C:/Program Files/Nuke13.0v2/nuke-13.0.2.dll -nx
+version 13.0 v2
+define_window_layout_xml {<?xml version="1.0" encoding="UTF-8"?>
+<layout version="1.0">
+    <window x="802" y="87" w="1323" h="744" screen="0">
+        <splitter orientation="1">
+            <split size="40"/>
+            <dock id="" hideTitles="1" activePageId="Toolbar.1">
+                <page id="Toolbar.1"/>
+            </dock>
+            <split size="850" stretch="1"/>
+            <splitter orientation="2">
+                <split size="706"/>
+                <dock id="" activePageId="DAG.1" focus="true">
+                    <page id="DAG.1"/>
+                </dock>
+            </splitter>
+            <split size="425"/>
+            <dock id="" activePageId="uk.co.thefoundry.scripteditor.1">
+                <page id="uk.co.thefoundry.scripteditor.1"/>
+            </dock>
+        </splitter>
+    </window>
+</layout>
+}
+Root {
+ inputs 0
+ name C:/Users/tanant/Desktop/topnode.nk
+ format "2048 1556 0 0 2048 1556 1 2K_Super_35(full-ap)"
+ proxy_type scale
+ proxy_format "1024 778 0 0 1024 778 1 1K_Super_35(full-ap)"
+ colorManagement Nuke
+ workingSpaceLUT linear
+ monitorLut sRGB
+ monitorOutLUT rec709
+ int8Lut sRGB
+ int16Lut sRGB
+ logLut Cineon
+ floatLut linear
+}
+Camera3 {
+ inputs 0
+ focal 9.5
+ name Camera1
+ xpos 146
+ ypos -86
+}
+Dot {
+ name Dot5
+ xpos 170
+ ypos 11
+}
+Dot {
+ name Dot6
+ xpos 170
+ ypos 75
+}
+Dot {
+ name Dot4
+ label "CAMERA GOPES HERE"
+ xpos 170
+ ypos 195
+}
+Dot {
+ name Dot1
+ xpos 170
+ ypos 334
+}
+Dot {
+ name Dot2
+ xpos 99
+ ypos 356
+}
+Dot {
+ name Dot3
+ xpos 99
+ ypos 400
+}
+Scene {
+ name Scene1
+ xpos 152
+ ypos 402
+}
+ColorBars {
+ inputs 0
+ name ColorBars1
+ xpos -79
+ ypos -145
+}
+Grade {
+ name Grade3
+ xpos -79
+ ypos -23
+}
+Roto {
+ output alpha
+ curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 0}
+    {t x44800000 x44428000}
+    {a pt1x 0 pt1y 0 pt2x 0 pt2y 0 pt3x 0 pt3y 0 pt4x 0 pt4y 0 ptex00 0 ptex01 0 ptex02 0 ptex03 0 ptex10 0 ptex11 0 ptex12 0 ptex13 0 ptex20 0 ptex21 0 ptex22 0 ptex23 0 ptex30 0 ptex31 0 ptex32 0 ptex33 0 ptof1x 0 ptof1y 0 ptof2x 0 ptof2y 0 ptof3x 0 ptof3y 0 ptof4x 0 ptof4y 0 pterr 0 ptrefset 0 ptmot x40800000 ptref 0}}}}}
+ toolbox {createBezier {
+  { createBezier str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+ toolbar_brush_hardness 0.200000003
+ toolbar_source_transform_scale {1 1}
+ toolbar_source_transform_center {1024 778}
+ name Roto2
+ xpos -79
+ ypos 61
+}
+Grade {
+ name Grade2
+ xpos -79
+ ypos 159
+}
+Transform {
+ center {1024 778}
+ name Transform2
+ xpos -79
+ ypos 232
+}
+set N877bfc00 [stack 0]
+CheckerBoard2 {
+ inputs 0
+ name CheckerBoard1
+ xpos -213
+ ypos -52
+}
+Roto {
+ output alpha
+ curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 0}
+    {t x44800000 x44428000}
+    {a pt1x 0 pt1y 0 pt2x 0 pt2y 0 pt3x 0 pt3y 0 pt4x 0 pt4y 0 ptex00 0 ptex01 0 ptex02 0 ptex03 0 ptex10 0 ptex11 0 ptex12 0 ptex13 0 ptex20 0 ptex21 0 ptex22 0 ptex23 0 ptex30 0 ptex31 0 ptex32 0 ptex33 0 ptof1x 0 ptof1y 0 ptof2x 0 ptof2y 0 ptof3x 0 ptof3y 0 ptof4x 0 ptof4y 0 pterr 0 ptrefset 0 ptmot x40800000 ptref 0}}}}}
+ toolbox {createBezier {
+  { createBezier str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+ toolbar_brush_hardness 0.200000003
+ toolbar_source_transform_scale {1 1}
+ toolbar_source_transform_center {1024 778}
+ name Roto1
+ xpos -213
+ ypos 78
+}
+Grade {
+ name Grade1
+ xpos -213
+ ypos 158
+}
+Transform {
+ center {1024 778}
+ name Transform1
+ xpos -213
+ ypos 240
+}
+Merge2 {
+ inputs 2
+ name Merge1
+ xpos -213
+ ypos 356
+}
+push $N877bfc00
+ColorWheel {
+ inputs 0
+ gamma 0.45
+ name ColorWheel1
+ xpos 38
+ ypos 17
+}
+push 0
+Blur {
+ inputs 1+1
+ name Blur1
+ xpos 38
+ ypos 227
+}
+Merge2 {
+ inputs 2
+ name Merge2
+ xpos -79
+ ypos 364
+}
+StickyNote {
+ inputs 0
+ name StickyNote1
+ label "the_node = nuke.toNode(\"Scene1\")\n\n# manual process\nthe_node.input(0).input(0).input(0).input(0).input(0).input(0)\n\n\ndef topnode(the_node, max_depth=None):\n    \"\"\"Return the topmost node on the B-stream (input 0)\n       go at MOST max_depth nodes (if none, go forever)\n       return that node that you found at this depth\n       NOTE: first node found is depth 0\n    \"\"\"\n\n    current_node = the_node\n    depth = 0\n    while True:\n        if current_node.input(0) is None:\n            return current_node\n        else:\n            current_node = current_node.input(0)\n\nthe_node = nuke.selectedNode()\nprint (topnode(the_node, 3).name())\n\nthe_node.input(0).input(0).input(0).input(0).input(0).input(0)\n\ndef topnode_r(the_node):\n    \"\"\"Return the topmost node on the B-stream (input 0)\"\"\"\n\n    current_node = the_node\n    if current_node.input(0) is None:\n        return current_node\n    return topnode_r(current_node.input(0))\n\n\nthe_node = nuke.selectedNode()\nprint(topnode_r(the_node).name())\n\nfoo()\n\ndef foo():\n    return foo()\n"
+ xpos 287
+ ypos -106
+}
