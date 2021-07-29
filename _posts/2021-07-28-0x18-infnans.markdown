@@ -1,0 +1,46 @@
+---
+layout: post
+title:  "Python for (Nuke) Compers 0x18 - to infinity and wait.. what?"
+---
+<iframe width="560" height="315" src="https://www.youtube.com/embed/o1tawUXh_lQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+## a summary of NaN/inf maths i ran through
+
+Note: I may not have this 100% right, please use your judgement and *verify* anything that seems off or even seems logical. 
+
+### the basics
+
+- 1/0 = inf  --> large numbers
+- 0/0 = nan  --> nonsensical numbers ('penguin')
+
+### nan maths
+
+|what you try  | what you get| (& why) |
+ --- | --- | ---
+|nan and anything| nan| if it invovles a nan, it'll be a nan.|
+
+### inf maths
+
+|what you try  | what you get | (& why) |
+ --- | --- | ---
+|inf + 1 | inf | big + 1 is still big|
+|inf - 1 | inf | big - 1 is still big|
+|inf + inf| inf| yep. Still big|
+|-inf - inf| -inf| yep. Still big. but negative|
+|inf - inf| **nan** |If the first inf was bigger, this would be positive. If the second inf was bigger, it'd be negative.  (ノ°Д°)ノ︵ ┻━━┻ |
+|inf * -1 | -inf | sure, let's flip it to be negative. This is fine. |
+|3 * inf | inf | this is (inf + inf + inf) which is (inf + inf) which is (inf) and well, you get the idea|
+|inf * 3 | inf | this is the same as above, multiplication doesn't mind the order|
+|inf * inf | inf | this is the same as above, just taken to (har har) infinity |
+|inf * -inf | -inf | this is basically (inf * inf * -1) which is (inf * -1)|
+|1 / inf | **0** | anything divided by a huge amount approximates zero...|
+|inf / 2 | inf | half of infinity is still kinda large |
+|inf / 0| inf | and anything divided by zero is also going to be huuuge |
+|inf * 0| nan | ...but zero lots of infinity is.. weird (see: limit maths) |
+|inf * inf| nan | and an infinite amount of infinity is.. weird |
+
+
+# Here's a way to make silly values!
+[here's the nukescript](/assets/resources/infnangenerator.nk) (7kb)
+[![a screenshot of the mess you're getting](/assets/images/0x18-infnanmaker.png)](/assets/resources/topnode.nk)

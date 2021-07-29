@@ -1,0 +1,245 @@
+set cut_paste_input [stack 0]
+Constant {
+ inputs 0
+ channels rgb
+ name Constant3
+ selected true
+ xpos 204
+ ypos -412
+}
+Dot {
+ name Dot3
+ selected true
+ xpos 238
+ ypos -309
+}
+set N95000800 [stack 0]
+Noise {
+ output {-rgba.red -rgba.green rgba.blue rgba.alpha}
+ size 0.5
+ zoffset 5
+ center {960 540}
+ name Noise7
+ selected true
+ xpos 306
+ ypos -245
+}
+push 0
+push $N95000800
+Noise {
+ output {-rgba.red rgba.green -rgba.blue rgba.alpha}
+ size 0.5
+ zoffset 4
+ center {960 540}
+ name Noise8
+ selected true
+ xpos 204
+ ypos -248
+}
+push $N95000800
+Noise {
+ output {rgba.red -rgba.green -rgba.blue rgba.alpha}
+ size 0.5
+ zoffset 3
+ center {960 540}
+ name Noise9
+ selected true
+ xpos 108
+ ypos -249
+}
+Merge2 {
+ inputs 3+1
+ operation plus
+ name Plus2
+ selected true
+ xpos 108
+ ypos -157
+}
+Expression {
+ temp_name0 hot
+ temp_expr0 0.7
+ expr0 r>hot?1e+38:0
+ expr1 g>hot?1e+38:0
+ expr2 b>hot?1e+38:0
+ name Expression5
+ label "making large"
+ selected true
+ xpos 108
+ ypos -64
+}
+push 0
+Constant {
+ inputs 0
+ channels rgb
+ name Constant1
+ selected true
+ xpos -708
+ ypos -414
+}
+Dot {
+ name Dot1
+ selected true
+ xpos -674
+ ypos -296
+}
+set N95108800 [stack 0]
+Noise {
+ output {-rgba.red -rgba.green rgba.blue rgba.alpha}
+ size 0.5
+ zoffset 3
+ center {960 540}
+ name Noise3
+ selected true
+ xpos -606
+ ypos -232
+}
+push 0
+push $N95108800
+Noise {
+ output {-rgba.red rgba.green -rgba.blue rgba.alpha}
+ size 0.5
+ zoffset 2
+ center {960 540}
+ name Noise2
+ selected true
+ xpos -708
+ ypos -235
+}
+push $N95108800
+Noise {
+ output {rgba.red -rgba.green -rgba.blue rgba.alpha}
+ size 0.5
+ zoffset 1
+ center {960 540}
+ name Noise1
+ selected true
+ xpos -804
+ ypos -241
+}
+Merge2 {
+ inputs 3+1
+ operation plus
+ name Plus
+ selected true
+ xpos -804
+ ypos -144
+}
+Expression {
+ temp_name0 hot
+ temp_expr0 0.7
+ expr0 r>hot?inf:0
+ expr1 g>hot?inf:0
+ expr2 b>hot?inf:0
+ name Expression2
+ label "making inf"
+ selected true
+ xpos -804
+ ypos -66
+}
+Constant {
+ inputs 0
+ channels rgb
+ name Constant2
+ selected true
+ xpos -269
+ ypos -410
+}
+Dot {
+ name Dot2
+ selected true
+ xpos -235
+ ypos -307
+}
+set N9461b000 [stack 0]
+Noise {
+ output {-rgba.red -rgba.green rgba.blue rgba.alpha}
+ size 0.5
+ zoffset 3.06
+ center {960 540}
+ name Noise4
+ selected true
+ xpos -170
+ ypos -249
+}
+push 0
+push $N9461b000
+Noise {
+ output {-rgba.red rgba.green -rgba.blue rgba.alpha}
+ size 0.5
+ zoffset 2.6
+ center {960 540}
+ name Noise5
+ selected true
+ xpos -269
+ ypos -246
+}
+push $N9461b000
+Noise {
+ output {rgba.red -rgba.green -rgba.blue rgba.alpha}
+ size 0.5
+ zoffset 4.14
+ center {960 540}
+ name Noise6
+ selected true
+ xpos -365
+ ypos -247
+}
+Merge2 {
+ inputs 3+1
+ operation plus
+ name Plus1
+ selected true
+ xpos -365
+ ypos -155
+}
+Expression {
+ temp_name0 hot
+ temp_expr0 0.65
+ expr0 r>hot?nan:0
+ expr1 g>hot?nan:0
+ expr2 b>hot?nan:0
+ name Expression4
+ label "making nan"
+ selected true
+ xpos -365
+ ypos -62
+}
+Merge2 {
+ inputs 3+1
+ operation plus
+ name Merge1
+ selected true
+ xpos -365
+ ypos 55
+}
+set N94619800 [stack 0]
+Expression {
+ expr0 isinf(r)?1:0
+ expr1 isinf(g)?1:0
+ expr2 isinf(b)?1:0
+ expr3 isinf(r)?1:0
+ name Expression6
+ label "which pixels are inf and on which channel?"
+ selected true
+ xpos -222
+ ypos 166
+}
+push $N94619800
+Expression {
+ expr0 isnan(r)?1:0
+ expr1 isnan(g)?1:0
+ expr2 isnan(b)?1:0
+ name Expression3
+ label "which pixels are NaN and on which channel?"
+ selected true
+ xpos -518
+ ypos 158
+}
+push $N94619800
+Blur {
+ size {{frame-1000}}
+ name Blur1
+ selected true
+ xpos -365
+ ypos 245
+}
