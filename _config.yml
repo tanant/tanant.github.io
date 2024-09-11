@@ -29,11 +29,11 @@ description: >- # this means to ignore newlines until "baseurl:"
 author: "email:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://greenworm.net" # the base hostname & protocol for your site, e.g. http://example.com
+instagram_username: anthony.tan
+youtube_username: tanantish
 github_username:  tanant
-
 imdb_nicename: Anthony Tan  # use this to display something nicer
 imdb_username: nm7533028  # the werid imDB name thing
-
 linkedin_nicename: Anthony Tan  # use this to display something nicer for linkedin
 linkedin_username: tanant  # the annoying linked thing as well
 
@@ -42,10 +42,11 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-redirect-from
-  
+
 header_pages:
  - pages/about.markdown
  - pages/diagnostics.markdown
+# - pages/garmin.markdown
 
 markdown: kramdown
 

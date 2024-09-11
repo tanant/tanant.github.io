@@ -12,19 +12,19 @@ I appear to generate enough silly bits and pieces of material that _some_ people
 
 Right now, as with everything, this is one giant tech test. The idea is to do what I can as badly as possible in a way that _just_ squeaks over the line, which in turn makes me figure out what I next need to do to get to the next stage. 
 
-## Where's Anthony (as at Jan 2021)?
+## Where's Anthony (as at ~~2021~~2024)?
 
 Montréal.
 
-## What's he doing right now (as at Jan 2021)?
+## What's he doing right now?
 
-Wrangling the 2D/Compositing pipeline at DNEG Montréal as Compositing Technical Supervisor (which is kind of like a Product Manager of sorts)
+Oof, big shifts (you can check from commit e31b13c for a historical) - in the intervening time I've started a move from 2D/Comp pipeline to Product Manager through to being involved in the annoying instability that is M&E right now. 
 
-Developing bits of it in conjunction with the RnD 2D team, acting as frontline support where needed, training the juniors, trying to set a general vision of where our pipeline should head both in terms of tools and tone, plus as well doing misc pipeline-y stuff that hopefully noone will ever notice (because if you notice it, I broke it..)
+Currently I'm working on a short film, learning new tech, keeping eye out for decent production-style roles, doing miscallaneous photography things for my friends in the wheeled sports scene and of note (for me), je aussi parle français finallement.. pas au niveau trés éléve mais je le fais! 
 
 ## Anything else?
 
-I'm part of the [Visual Effects Society](https://www.visualeffectssociety.com/), currently the Treasurer for the Montreal section actually.
+I'm part of the [Visual Effects Society](https://www.visualeffectssociety.com/), currently the Treasurer for the Montreal section.
 
 ## How'd you get here?
 
@@ -33,6 +33,4 @@ After a slightly long and torturous route winding through:
     (the hot one in Australia, not the colder one in Scotland);
  - bashing numbers with the Australian Federal Government on a couple of budgets (no, really);
  - 'acting' in London;
- - relocating to Sydney and somehow fluking a job on Fury Road;
-
-...I've somehow managed to have been gainfully employed in this VFX industry for like, a decade now.
+ - relocating to Sydney and somehow fluking a job on Fury Road.
