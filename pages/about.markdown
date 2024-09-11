@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-<img alt="Anthony smiling with chalk on his nose" width="260" height="260" class="img-right margin-left avatar" src="/assets/images/tanant_pic.jpg">
+<img alt="Anthony smiling with chalk on his nose" width="140" height="140" class="img-right margin-left avatar" src="/assets/images/tanant_pic.jpg">
 
 # Hi, my name's Anthony! *(waves)*
 
