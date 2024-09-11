@@ -44,10 +44,12 @@ plugins:
   - jekyll-redirect-from
 
 header_pages:
+ - index.html
  - pages/about.markdown
  - pages/diagnostics.markdown
-# - pages/garmin.markdown
 
+
+paginate: 8
 markdown: kramdown
 
 google_analytics: G-DF9MX5M13P
