@@ -6,7 +6,7 @@ title: "Measurement Protocol - Actually POST"
 
 Aaaaaaaand now the actual thing you're after - since we're just using straight up POSTs you can use whatever your language of choice is and your engine of choice. Since some of my audience is likely still VFXies and we're heavily on Python i'll do that for now but you can totally see what's going on I bet.
 
-![alt text](/assets/images/gtag_or_firebase.png "title")
+![coloured text describing what system and what key fields are needed](/assets/images/gtag_or_firebase.png)
 
 If you prefer an interactive thing to play around with, I'll suggest having a look at the [GA4 event builder](https://ga-dev-tools.google/ga4/event-builder/) initally. With the previous two steps completed it should be as simple as switching between the correct message format (gtag vs firebase) and you can eyeball the requests it makes to understand what's going on.
 
@@ -49,14 +49,14 @@ urllib.request.urlopen(req)
 
 If you shoot those two off, you should then see the events populate in your bigquery stream (you did set that up right? this is why you set that up.)
 
-![alt text](/assets/images/query_results.png "title")
+![screnshot of the result of an SQL query](/assets/images/query_results.png )
 
 ## Field mappings and curiosities
 In normal operation `user_pseudo_id` is drawn from the gtag `client_id` or the `app_instance_id` hex string you supplied. While the `client_id` is fairly relaxed, if you supply a malformed (short/long) instance ID the event will disappear into the ether as far as I can tell.
 
 However.. while writing and checking my code I got the two mixed up 🤦 and was wondering what the heck was going on with data not flowing through as expected.. turns out if you use the `client_id` key but an android or ios endpoint.. you can use an arbitrary string again? 
 
-![alt text](/assets/images/client_id_usage_oddity.png "title")
+![query results with a highlight on the strange user_pseudo_id i can generate for android and iOS platforms](/assets/images/client_id_usage_oddity.png "This makes me uncomfortable")
 
 I would probably not do this. This feels weird on so many levels. _So many_.
 

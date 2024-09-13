@@ -6,6 +6,8 @@ title: "Measurement Protocol - Validation Loop"
 
 This should be relatively short, we're going to be using a gtag-based setup to get something flowing across. Literally this:
 
+(yes yes, the project is deleted, keys are revoked, billing is disabled, etc. Was an actual decision to not redact things just because it makes documentation a bit easier to follow)
+
 {% highlight html %}
 <html>
     <head>
@@ -49,7 +51,7 @@ If you throw up a devtools sidebar and watch the network traffic you should also
 
 In google analytics or the firebase console, you should see something appear in the realtime view with your arbitrary events (and page_view too). In the debugview you'll also see the same things, and if you go to the bigquery store in the `_intraday` table, you should find your events.
 
-![alt text](/assets/images/data_flow_validation.png)
+![screenshots showing where events should appear](/assets/images/data_flow_validation.png)
 ## Other things of note from poking around
 In our firebaseConfig, i've commented out the MeasurementID as it's not important. In the console, you'll notice that there's a request to firebase.googleapis.com with the appId that returns what is in effect, the config package with the measrurement ID.
 

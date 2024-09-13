@@ -18,13 +18,13 @@ For 95% of users the defaults are probably buuuut I would prefer less access so 
 #### 2. Generate 'apps' (data streams), config, and service keys
 Righto. So in the Firebase console, generate three apps. For each app, get the Firebase App ID. For the `web` app also grab the config pack. We will use this for the loop test in a bit, and we want the Measurement ID as well anyway.
 
-![alt text](/assets/images/data_to_grab.png "title text")
+![a screenshot showing configuration information](/assets/images/data_to_grab.png "these things here")
 
 Okay. Now we have to go to the _analytics_ console so visit [analytics.google.com](analytics.google.com) and crack open the Admin view.
 
 From there, under Property Settings > Data collection and modification head to Data streams. For each of your Android, iOS, and Web streams, you will need to generate a Measurement Protocol API secret. Note that these are linked _to that particular stream_ so keep track of what belongs to what.
 
-![alt text](/assets/images/google_analytics_where_to_go.jpg "title text")
+![arrows highlighting the admin icon and the data stream option](/assets/images/google_analytics_where_to_go.jpg "admin cog took me longer than I like to admit to find one time :|")
 
 ⚠️ One HUGE gotcha, there seems to be a width bug so don't do what I did and copy the text manually.. you could lose a few characters. Make sure you can see the copy icon.
 
@@ -45,19 +45,19 @@ If it wasn't obvious, the AppID contains an identifier for the project (I think)
 #### 3. Bigquery link
 Almost done with config! Back to the firebase console and the project's settings, you want to manage Integration. Since we made our apps beforehand it should have 3 of 3 exporting (but make sure).
 
-![alt text](/assets/images/base_bigquery_setup.png "title text")
+![screenshot of the initial bigquery link dialog](/assets/images/base_bigquery_setup.png "if you do the link first i think the apps don't default export. I forget.")
 
 You'll also notice if you've not got billing, Streaming won't be an option. It's not critical but I would Strongly Suggest for the prototyping phase (for the scale I'm working at I'm still in the free tier). Waiting an entire day to do some checks is just unmitigated pain.
 
 Finally, if you've _just_ set this up you will notice that the dataset is not created. Let's fix that.
 
-![alt text](/assets/images/no_dataset_created.png "title text")
+![screenshot showing "dataset not created"](/assets/images/no_dataset_created.png "pfft. let's just create it.")
 
 Originally I waited overnight for the dataset to be created as regular batch operation.. but you can just do it yourself now, if you know the dataset name it's looking for which is.. `analytics_{propertyID}`[^1]
 
 So head to the bigquery warehouse for your project, and well, make that dataset. You'll know it's working correctly when you see a new tabled called `events_intraday_` appear, and back in the firebase console it'll show that dataset linked across.
 
-![alt text](/assets/images/bigquery_lazy.png "title text")
+![screenshot of bigquery setup](/assets/images/bigquery_lazy.png "tadah!")
 
 >❗If you aren't set up for streaming you won't see this! You will need to wait aaages and there's no reason for this shortcut.
 
