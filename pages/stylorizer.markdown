@@ -72,6 +72,21 @@ Definition Term (dt) and definition list (dl)
 ##### Heading 5
 more text
 
+
+#### Table of Contents
+
+- [Underline](#underline)
+- [Indent](#indent)
+- [Center](#center)
+- [Color](#color)
+
+> **Warning:** Do not push the big red button.
+
+> **Note:** Sunrises are beautiful.
+
+> **Tip:** Remember to appreciate the little things in life.
+
+
 [anchor]: foo
 [^cite1]: this is a specific type of anchor
 [^1]: more footnote
