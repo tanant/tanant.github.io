@@ -41,6 +41,9 @@ Also, while bashing out this sheet and polishing it up, I'm struck by just how m
 - **Auto-update**: There's a function in google sheets that lets it recalculate formulas every minute so that keeps the thing ticking along so you don't have to interact with it necessarily. ![spreadsheet settings](/assets/images/calc-every-minute.jpg) It's not critical as you can you can simply  bump a cell and it'll have the same effect - you'll have to do this on mobile.[^2]
 
 ### Upgrades ➡️ logging
+
+⚠️ Edit: 30 Sept: [aaaand done!](/2024/09/30/spreadsheet-autologger.html) ⚠️
+
 During the ride I realised I would also liked to have a little bit of historical tracking - I'm currently converting the sheet to be online in Google Docs, with some AppsScript bolted in that should record data every 5 mins or every time something gets updated.
 
 It'd be interesting to get a graphical picture of my timings about when/where I ate what. Doubt there's anything earth shattering there however it'll be interesting to see overshoots and if I suddenly panic and eat a whole lot to catch up (or if I feel like meh and try cover it with cans of fizzy drink).
