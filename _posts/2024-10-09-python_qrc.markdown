@@ -63,9 +63,20 @@ button.setIconSize(QtCore.QSize(128,128))
 button.show()
 {% endhighlight %}
 
+### Reload? Maaaybe not..
 
+Something you might be doing as part of your python workflow is an `importlib.reload()` right? Just make sure you don't do it with this psuedo module. At the bottom if you dive in, you'll notice this bootstrapping:
+{% highlight python %}
+def qInitResources():
+    QtCore.qRegisterResourceData(0x03, qt_resource_struct, qt_resource_name, qt_resource_data)
 
+def qCleanupResources():
+    QtCore.qUnregisterResourceData(0x03, qt_resource_struct, qt_resource_name, qt_resource_data)
 
+qInitResources()
+{% endhighlight %}
+
+Notice that the import is used to run the `qInitResource` - if you reload the module you'll end up a bit of a messy situation from Qt. It may not explode immediately, but yeeeeeeeeaaaah, I don't think this is anything you want to explore in production (but to blow stuff up, sure!)
 
 
 [^1]: I'm looking at you ChatGPT 😑
